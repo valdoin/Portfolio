@@ -1,0 +1,8 @@
+body {
+    cursor: url('./Cursor.svg'), auto;
+}
+
+a,button {
+    cursor: url('./Pointer.svg'), pointer;
+}
+
