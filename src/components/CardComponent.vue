@@ -57,17 +57,19 @@ export default {
 
 <style scoped>
 .card {
-  width: calc(22% - 30px);
+  width: calc(45% - 20px); 
+  max-width: 350px; 
   border-radius: 10px;
   box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   margin: 10px;
   display: inline-block;
-  transition: box-shadow 0.3s ease; 
+  transition: box-shadow 0.3s ease;
+  flex: 1; 
 }
 
 .card:hover {
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .card-header {
@@ -85,11 +87,12 @@ export default {
   align-items: center;
   padding: 10px;
   background-color: var(--background-color);
+  max-height: 150px;
 }
 
 .card-description {
   flex: 2;
-  padding-left: 3vh;
+  padding-left: 1rem; 
 }
 
 .card-image {
@@ -113,7 +116,7 @@ export default {
 .icon-list {
   display: flex;
   justify-content: center;
-  margin-bottom: 1vh;
+  margin-bottom: 2vh;
 }
 
 .icon {
@@ -123,7 +126,7 @@ export default {
 }
 
 .card-footer {
-  padding: 10px;
+  padding: 1vh;
   text-align: center;
 }
 
@@ -146,5 +149,15 @@ export default {
 .flip-in {
   animation: flipIn 1s ease forwards;
 }
-</style>
 
+@media (max-width: 768px) {
+  .card {
+    width: 90%; 
+    max-width: none; 
+    margin: 10px auto; 
+  }
+  .card-content {
+    max-height: none;
+  }
+}
+</style>

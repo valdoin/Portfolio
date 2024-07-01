@@ -89,6 +89,7 @@ export default {
 .folders {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap; 
 }
 
 @keyframes fadeIn {
@@ -103,5 +104,31 @@ export default {
 
 .fade-in {
   animation: fadeIn 1.5s ease forwards;
+}
+
+@media (max-width: 1200px) {
+  .folders {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 992px) {
+  .folders {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .folders > * {
+    flex: 0 0 48%; 
+    margin: 1%;
+  }
+}
+
+@media (max-width: 768px) {
+  .folders > * {
+    flex: 0 0 98%; 
+    margin: 1% 0;
+  }
 }
 </style>

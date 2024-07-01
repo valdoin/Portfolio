@@ -1,20 +1,41 @@
 <template>
   <div class="projects">
-    <CardComponent title="PicPals" :imageSrc="picpalsIcon" :icons="picpalsStackIcons"
-      githubLink="https://github.com/valdoin/PicPals" cardColor="black"
-      description="PicPals is a social media platform that allows users to share drawings and connect with friends." />
-    <CardComponent title="Planifica" :imageSrc="planificaIcon" :icons="planificaStackIcons"
-      githubLink="https://github.com/valdoin/Planifica-Front" cardColor="#00BF63"
-      description="Planifica is a scheduling web app with an inuitive colorful interface and rich features." />
-    <CardComponent title="Portfolio" :imageSrc="portfolioIcon" :icons="portfolioStackIcons"
-      githubLink="https://github.com/valdoin/Portfolio" cardColor="#246A73"
-      description="This website is my portfolio. It was made to improve my skills in front-end development." />
-    <CardComponent title="FileBucket" :imageSrc="fileBucketIcon" :icons="fileBucketStackIcons"
-      githubLink="https://github.com/valdoin/FileBucket" cardColor="#F38F13"
-      description="FileBucket is a simple file server web app that you can deploy locally on your computer." />
+    <CardComponent
+      title="PicPals"
+      :imageSrc="picpalsIcon"
+      :icons="picpalsStackIcons"
+      githubLink="https://github.com/valdoin/PicPals"
+      cardColor="black"
+      :description="$t('picpalsDescription')"
+    />
+    <CardComponent
+      title="Planifica"
+      :imageSrc="planificaIcon"
+      :icons="planificaStackIcons"
+      githubLink="https://github.com/valdoin/Planifica-Front"
+      cardColor="#00BF63"
+      :description="$t('planificaDescription')"
+    />
+    <CardComponent
+      title="Portfolio"
+      :imageSrc="portfolioIcon"
+      :icons="portfolioStackIcons"
+      githubLink="https://github.com/valdoin/Portfolio"
+      cardColor="#246A73"
+      :description="$t('portfolioDescription')"
+    />
+    <CardComponent
+      title="FileBucket"
+      :imageSrc="fileBucketIcon"
+      :icons="fileBucketStackIcons"
+      githubLink="https://github.com/valdoin/FileBucket"
+      cardColor="#F38F13"
+      :description="$t('fileBucketDescription')"
+    />
   </div>
-  <p class="teaser-text">And many more on my <a class="github-link" href="https://github.com/valdoin">GitHub profile</a> ...</p>
+  <p class="teaser-text">{{$t('projectsTeaser')}} <a class="github-link" href="https://github.com/valdoin">GitHub</a> ...</p>
 </template>
+
 
 <script>
 import CardComponent from '../components/CardComponent.vue';
@@ -61,7 +82,15 @@ export default {
   flex-wrap: wrap;
   justify-content: center; 
   gap:3vh; 
-  margin-top: 7vh;
+  margin-top: 2.5vh;
+}
+
+@media (max-width: 768px) {
+  .projects {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5vh;
+  }
 }
 
 .teaser-text {
@@ -70,6 +99,11 @@ export default {
   margin-top: 8vh;
   font-style: italic;
   animation: fadeIn 2s ease forwards;
+}
+
+a {
+  font: 500 20px 'Inconsolata', serif;
+  font-style: italic;
 }
 
 .github-link {

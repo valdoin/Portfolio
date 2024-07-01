@@ -1,7 +1,7 @@
 <template>
   <main class="main-content">
     <header class="header">
-      <img class="avatar fade-in" :src="currentAvatar" alt="Avatar d'Olivier ANDRIKO">
+      <img class="avatar fade-in" :src="currentAvatar" alt="random avatar">
       <h1 class="typing-effect title">olivier andriko</h1>
       <p class="intro-text typing-effect">
         {{ $t('welcomeMessage') }}

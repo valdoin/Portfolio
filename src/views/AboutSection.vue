@@ -12,20 +12,10 @@
   </div>
 </template>
 
-<script>
-
-export default {
-  name: 'AboutSection',
-};
-</script>
-
 <style scoped>
-
-
 .about {
   text-align: center;
 }
-
 
 h1 {
   text-align: justify; 
@@ -132,5 +122,53 @@ p:nth-of-type(6) {
 
 .fade-in {
   animation-name: fadeIn;
+}
+
+@media (max-width: 991px) {
+  h1, p {
+    margin: 0 10%;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .tip {
+    font-size: 12px;
+  }
+
+  .band {
+    width: 97%;
+  }
+}
+
+@media (max-width: 768px) {
+  h1, p {
+    margin: 0 5%;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .tip {
+    font-size: 12px;
+  }
+
+  .band {
+    width: 97%;
+  }
+}
+
+@media (max-width: 576px) {
+  h1, p {
+    margin: 0 2%;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .tip {
+    font-size: 12px;
+  }
+
+  .band {
+    width: 97%;
+  }
 }
 </style>

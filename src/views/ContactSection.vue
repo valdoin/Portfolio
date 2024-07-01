@@ -1,25 +1,27 @@
 <template>
   <div class="contact">
-    <h1>Vous voilà arrivé au bout !</h1>
-    <h2>Si vous appréciez mon travail ou que vous voulez me contacter, n'hésitez pas à consulter les liens suivants :</h2>
+    <h1 class="fade-in">{{ $t('contactTitle') }}</h1>
+    <h2 class="fade-in">{{ $t('contactLinksText') }}</h2>
     <div class="icons">
-      <div class="icon-container" @click="navigateTo('https://github.com/valdoin')">
+      <div class="icon-container slide-in-top" @click="navigateTo('https://github.com/valdoin')">
         <img class="icon" src="@/assets/green_github_icon.png" alt="GitHub" />
         <p class="description">valdoin</p>
       </div>
-      <div class="icon-container" @click="navigateTo('mailto:olivierandriko@gmail.com')">
+      <div class="icon-container slide-in-bottom" @click="navigateTo('mailto:olivierandriko@gmail.com')">
         <img class="icon" src="@/assets/green_mail_icon.png" alt="Email" />
         <p class="description">olivierandriko@gmail.com</p>
       </div>
-      <div class="icon-container" @click="navigateTo('https://discord.com/')">
+      <div class="icon-container slide-in-top" @click="navigateTo('https://discord.com/')">
         <img class="icon" src="@/assets/green_discord_icon.png" alt="Discord" />
         <p class="description">valdoin</p>
       </div>
     </div>
+    <footer>
+      <p>{{ $t('footer') }}</p>
+      <p>{{ $t('netlify') }}<a href="https://www.netlify.com/">Netlify</a>.</p>
+    </footer>
   </div>
 </template>
-
-
 
 <script>
 export default {
@@ -32,18 +34,38 @@ export default {
 };
 </script>
 
-
 <style scoped>
 .contact {
   text-align: center;
 }
 
 h2 {
-  margin-top : 7vh;
+  margin-top: 7vh;
 }
 
-h1, h2 {
+h2 {
+  font-size: 1.25em;
+}
+
+h1,
+h2 {
   color: var(--text-color);
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .icons {
@@ -62,13 +84,14 @@ h1, h2 {
   transition: transform 0.3s;
 }
 
-.icon-container:hover {
+.icon:hover {
   transform: scale(1.1);
 }
 
 .icon {
   width: 150px;
   height: 150px;
+  transition: transform 0.3s;
 }
 
 .description {
@@ -78,6 +101,10 @@ h1, h2 {
 }
 
 @media (max-width: 600px) {
+
+  h1 {
+    font-size: 1.65em;
+  }
   .icons {
     flex-direction: column;
   }
@@ -90,5 +117,78 @@ h1, h2 {
   .description {
     font-size: 1em;
   }
+}
+
+.slide-in-top {
+  animation: slideInTop 1s forwards;
+  opacity: 0;
+}
+
+.slide-in-bottom {
+  animation: slideInBottom 1s forwards;
+  opacity: 0;
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: var(--text-color);
+  text-align: center;
+  font: 400 16px 'Inconsolata', sans-serif;
+}
+
+@media (max-width: 768px) {
+  footer {
+    position: relative;
+    margin-top: 5vh;
+  }
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: #246A73;
+  font: 600 16px 'Inconsolata', serif;
+}
+
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #246A73;
+  transition: width 0.4s ease, right 0.4s ease;
+}
+
+a:hover::after {
+  width: 100%;
+  left: 0;
 }
 </style>

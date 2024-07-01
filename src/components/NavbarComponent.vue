@@ -43,28 +43,39 @@ export default {
 
 @media (max-width: 991px) {
   .header-container {
+    flex-direction: column; 
+    align-items: center; 
     padding: 10px 20px;
-    flex-direction: column;
-    align-items: center;
   }
-  
+
+  .logo-link {
+    margin-bottom: 10px;
+  }
+
   .navigation {
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
     gap: 10px;
     width: 100%;
+    padding-bottom: 5%;
   }
 
   .nav-item {
-    width: 100%;
+    flex: 1 1 auto; 
+    padding: 10px 15px;
     text-align: center;
-    padding: 10px;
-    margin: 5px 0;
+    font-size: 0.75em;
   }
 }
 
 .logo-link {
   text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.logo-link:hover {
+  transform: scale(1.1);
 }
 
 .site-logo {
@@ -87,20 +98,22 @@ export default {
   color: var(--nav-item-text-color-light); 
   padding: 10px 15px;
   border-radius: 8px;
+  transition: transform 0.3s, color 0.3s; 
 }
 
 .nav-item:hover {
   color: #246A73; 
-  transition: color 0.3s;
+  transform: scale(1.1);
 }
 
 .active {
   color: white; 
   background-color: #246A73;
-  transition: background-color 0.5s;
+  transition: background-color 0.5s, transform 0.3s; 
 }
 
 .active:hover {
   color: white;
+  transform: scale(1.1); 
 }
 </style>

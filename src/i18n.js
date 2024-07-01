@@ -8,6 +8,7 @@ const messages = {
     navbarProjects : "projects",
     navbarContact : "contact",
     footer: "© 2024 ANDRIKO Olivier. All rights reserved.",
+    netlify : "Hosted on ",
     welcomeMessage: 'Welcome to my portfolio!',
     getStarted: 'Let’s get started !',
     aboutFirstParagraph : "My name is <strong>Olivier ANDRIKO</strong>. 👋",
@@ -21,7 +22,14 @@ const messages = {
     secondFolder : "web & frameworks",
     thirdFolder : "database",
     fourthFolder : "mobile development",
-    fifthFolder : "others"
+    fifthFolder : "others",
+    picpalsDescription : "PicPals is a social media platform that allows users to share drawings and connect with friends.",
+    planificaDescription : "Planifica is a scheduling web app with an inuitive colorful interface and rich features.",
+    portfolioDescription : "This website is my portfolio. It was made to improve my skills in front-end development.",
+    fileBucketDescription : "FileBucket is a simple file server web app that you can deploy locally on your computer.",
+    projectsTeaser : "And many more on my ",
+    contactTitle : "You've reached the end !",
+    contactLinksText : "If you appreciate my work or wish to contact me, feel free to check out the following links :"
   },
   fr: {
     navbarHome : "accueil",
@@ -30,6 +38,7 @@ const messages = {
     navbarProjects : "projets",
     navbarContact : "me contacter",
     footer: "© 2024 ANDRIKO Olivier. Tous droits réservés.",
+    netlify : "Hébergé sur ",
     welcomeMessage: 'Bienvenue sur mon portfolio !',
     getStarted: "C'est parti !",
     aboutFirstParagraph : "Je m'appelle <strong>Olivier ANDRIKO</strong> et je te souhaite la bienvenue.👋",
@@ -43,7 +52,14 @@ const messages = {
     secondFolder : "développement web",
     thirdFolder : "bases de données",
     fourthFolder : "développement mobile",
-    fifthFolder : "divers"
+    fifthFolder : "divers",
+    picpalsDescription : "PicPals est un prototype de réseau social qui permet aux utilisateurs de partager quotidiennement des dessins.",
+    planificaDescription : "Planifica est une application web de planification dotée d'une interface intuitive et colorée ainsi que de fonctionnalités riches.",
+    portfolioDescription : "Ce site est mon portfolio. Il m'a permis d'améliorer mes compétences en développement front-end.",
+    fileBucketDescription : "FileBucket est une application web qui fait office de serveur de fichiers, facilement déployable localement sur votre ordinateur.",
+    projectsTeaser : "Et bien d'autres sur mon ",
+    contactTitle : "Vous voilà arrivé au bout !",
+    contactLinksText : "Si vous appréciez mon travail ou que vous voulez me contacter, n'hésitez pas à consulter les liens suivants :"
   }
 };
 

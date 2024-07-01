@@ -1,5 +1,5 @@
 <template>
-    <head>
+  <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
@@ -9,13 +9,11 @@
     <ThemeSwitchComponent />
     <NavbarComponent />
     <router-view />
-    <footer>
-      <p>{{ $t('footer') }}</p>
-    </footer>
   </div>
 </template>
 
 <script>
+import Hammer from 'hammerjs';
 import NavbarComponent from './components/NavbarComponent.vue';
 import LanguageSwitchComponent from './components/LanguageSwitchComponent.vue';
 import ThemeSwitchComponent from './components/ThemeSwitchComponent.vue';
@@ -29,9 +27,11 @@ export default {
   name: 'App',
   mounted() {
     window.addEventListener('keydown', this.handleKeydown);
+    this.addSwipeListeners();
   },
   beforeUnmount() {
     window.removeEventListener('keydown', this.handleKeydown);
+    this.removeSwipeListeners();
   },
   methods: {
     handleKeydown(event) {
@@ -56,6 +56,18 @@ export default {
       const currentIndex = routes.indexOf(currentRoute);
       const previousIndex = (currentIndex - 1 + routes.length) % routes.length;
       this.$router.push(routes[previousIndex]);
+    },
+    addSwipeListeners() {
+      this.hammer = new Hammer(this.$el);
+      this.hammer.on('swipeleft', this.navigateNext);
+      this.hammer.on('swiperight', this.navigatePrevious);
+    },
+    removeSwipeListeners() {
+      if (this.hammer) {
+        this.hammer.off('swipeleft', this.navigateNext);
+        this.hammer.off('swiperight', this.navigatePrevious);
+        this.hammer = null;
+      }
     }
   }
 };
@@ -65,15 +77,5 @@ export default {
 #app {
   position: relative;
   overflow: hidden;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  color: var(--text-color);
-  padding: 10px;
-  text-align: center;
-  font: 400 14px 'Inconsolata', sans-serif;
 }
 </style>
