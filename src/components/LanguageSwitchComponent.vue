@@ -1,25 +1,27 @@
 <template>
   <div class="language-switch">
-    <transition-group name="flag" tag="div" class="flags-container">
-      <img
+    <transition-group name="language" tag="div" class="languages-container">
+      <div
         v-if="currentLanguage === 'en'"
-        src="@/assets/flag-uk.svg"
-        alt="English"
         @click="switchLanguage('fr')"
-        class="flag"
+        class="language"
         key="en"
-      />
-      <img
+      >
+        en
+      </div>
+      <div
         v-if="currentLanguage === 'fr'"
-        src="@/assets/flag-fr.svg"
-        alt="Français"
         @click="switchLanguage('en')"
-        class="flag"
+        class="language"
         key="fr"
-      />
+      >
+        fr
+      </div>
     </transition-group>
   </div>
 </template>
+
+
 
 <script>
 import { ref } from 'vue';
@@ -52,44 +54,49 @@ export default {
   height: 1vh;
 }
 
-.flags-container {
+.languages-container {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-.flag {
-  width: 40px;
-  height: 40px;
+.language {
   position: absolute;
-  border-radius: 14px;
   top: 2vh;
   left: 1vw;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px; 
+  font-family: 'Inconsolata', serif; 
+  font-weight: 400;
+  color: var(--theme-color); 
+  cursor: url('../assets/Pointer.svg'), auto;
 }
 
-.flag-enter-active, .flag-leave-active {
+.language-enter-active, .language-leave-active {
   position: absolute;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-.flag-enter-from {
+.language-enter-from {
   transform: translateY(-100%);
   opacity: 0;
 }
 
-.flag-enter-to {
+.language-enter-to {
   transform: translateY(0);
   opacity: 1;
 }
 
-.flag-leave-from {
+.language-leave-from {
   transform: translateY(0);
   opacity: 1;
 }
 
-.flag-leave-to {
+.language-leave-to {
   transform: translateY(100%);
   opacity: 0;
 }
@@ -98,6 +105,9 @@ export default {
   .language-switch {
     height: 7vh;
     bottom: 2vh;
+  }
+  .language {
+    font-size : 32px;
   }
 }
 </style>
