@@ -46,11 +46,11 @@ p {
 }
 
 .band {
-  height: 5px;
+  height: 0.75vh;
   background-color: #246A73; 
   width: 60%;
   display: inline-block;
-  margin: 5vh 0;
+  margin: 3vh 0;
   opacity: 0;
   animation: fadeIn 1s forwards;
 }
@@ -58,7 +58,6 @@ p {
 .tip {
   font: 500 14px 'Inconsolata', serif;
   color: #9c9c9c;
-  margin-top: 20px;
   text-align: center;
   opacity: 0;
   animation: fadeIn 1s forwards;

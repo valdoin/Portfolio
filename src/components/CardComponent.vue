@@ -74,7 +74,6 @@ export default {
   padding: 10px;
   text-align: center;
   color: white;
-  border-bottom: 1px solid #ddd;
 }
 
 .card-header h2 {
@@ -85,7 +84,7 @@ export default {
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: #F8FAFB;
+  background-color: var(--background-color);
 }
 
 .card-description {
@@ -108,7 +107,7 @@ export default {
 .card-body {
   padding: 5px;
   text-align: center;
-  background-color: #F8FAFB;
+  background-color: var(--background-color);
 }
 
 .icon-list {

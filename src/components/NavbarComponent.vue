@@ -10,20 +10,13 @@
       <router-link to="/projects" class="nav-item" tabindex="0" :class="{ 'active': isActive('/projects') }" @click="updateActiveLink('/projects')">{{ $t('navbarProjects') }}</router-link>
       <router-link to="/contact" class="nav-item" tabindex="0" :class="{ 'active': isActive('/contact') }" @click="updateActiveLink('/contact')">{{ $t('navbarContact') }}</router-link>
     </nav>
+    <theme-switch></theme-switch>
   </header>
 </template>
 
 <script>
-import { useI18n } from 'vue-i18n';
 export default {
   name: 'NavbarComponent',
-  setup() {
-    const { t } = useI18n();
-
-    return {
-      $t: t
-    };
-  },
   methods: {
     updateActiveLink(path) {
       this.$router.push(path);
@@ -38,24 +31,38 @@ export default {
 <style scoped>
 .header-container {
   display: flex;
-  justify-content: center;
-  background-color: #F8FAFB;
-  gap: 20px;
+  justify-content: space-evenly;
+  align-items: center;
   font-size: 20px;
-  color: #000;
   font-weight: 500;
   line-height: 150%;
-  padding: 20px 80px;
-  position: relative; 
+  padding: 2vh 2.5vw;
+  background-color: var(--header-bg-color-light); 
+  color: var(--header-text-color-light); 
 }
 
 @media (max-width: 991px) {
   .header-container {
-    flex-wrap: wrap;
     padding: 10px 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .navigation {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin: 5px 0;
   }
 }
-  
+
 .logo-link {
   text-decoration: none;
 }
@@ -72,31 +79,28 @@ export default {
   align-items: center;
   gap: 20px;
   white-space: nowrap;
-  position: relative; 
 }
 
 .nav-item {
   font-family: 'Inconsolata', serif;
-  align-self: stretch;
-  margin: auto 0;
   text-decoration: none;
-  color: black;
-  position: relative; 
+  color: var(--nav-item-text-color-light); 
+  padding: 10px 15px;
+  border-radius: 8px;
 }
 
 .nav-item:hover {
   color: #246A73; 
+  transition: color 0.3s;
 }
 
 .active {
-  color: white;
+  color: white; 
   background-color: #246A73;
-  border-radius: 8px;
-  padding: 10px 20px;
-  transition: background-color 0.5s, 
+  transition: background-color 0.5s;
 }
 
 .active:hover {
-  color:white
+  color: white;
 }
 </style>

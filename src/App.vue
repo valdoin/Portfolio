@@ -5,7 +5,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
   </head>
   <div id="app">
-    <LanguageSwitchComponent />
+    <LanguageSwitchComponent/>
+    <ThemeSwitchComponent />
     <NavbarComponent />
     <router-view />
     <footer>
@@ -17,11 +18,13 @@
 <script>
 import NavbarComponent from './components/NavbarComponent.vue';
 import LanguageSwitchComponent from './components/LanguageSwitchComponent.vue';
+import ThemeSwitchComponent from './components/ThemeSwitchComponent.vue';
 
 export default {
   components: {
     NavbarComponent,
-    LanguageSwitchComponent
+    LanguageSwitchComponent,
+    ThemeSwitchComponent
   },
   name: 'App',
   mounted() {
@@ -68,7 +71,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  color: black;
+  color: var(--text-color);
   padding: 10px;
   text-align: center;
   font: 400 14px 'Inconsolata', sans-serif;

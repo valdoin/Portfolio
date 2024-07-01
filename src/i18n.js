@@ -28,7 +28,7 @@ const messages = {
     navbarAbout : "à propos de moi",
     navbarSkills : "compétences",
     navbarProjects : "projets",
-    "navbarContact" : "me contacter",
+    navbarContact : "me contacter",
     footer: "© 2024 ANDRIKO Olivier. Tous droits réservés.",
     welcomeMessage: 'Bienvenue sur mon portfolio !',
     getStarted: "C'est parti !",

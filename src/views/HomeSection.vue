@@ -1,7 +1,7 @@
 <template>
   <main class="main-content">
     <header class="header">
-      <img class="avatar fade-in" src="@/assets/avatar.jpg" alt="Avatar d'Olivier ANDRIKO">
+      <img class="avatar fade-in" :src="currentAvatar" alt="Avatar d'Olivier ANDRIKO">
       <h1 class="typing-effect title">olivier andriko</h1>
       <p class="intro-text typing-effect">
         {{ $t('welcomeMessage') }}
@@ -14,92 +14,106 @@
 </template>
 
 <script>
-
+import randomAvatar1 from '../assets/random_avatars/random_avatar_1.gif';
+import randomAvatar2 from '../assets/random_avatars/random_avatar_2.gif';
+import randomAvatar3 from '../assets/random_avatars/random_avatar_3.gif';
+import randomAvatar4 from '../assets/random_avatars/random_avatar_4.gif';
+import randomAvatar5 from '../assets/random_avatars/random_avatar_5.gif';
+import randomAvatar6 from '../assets/random_avatars/random_avatar_6.gif';
 export default {
   name: 'HomeSection',
+  data() {
+    return {
+      avatars: [randomAvatar1, randomAvatar2, randomAvatar3, randomAvatar4, randomAvatar5, randomAvatar6],
+      currentAvatar: '',
+      isDarkMode: true  
+    };
+  },
   methods: {
     redirectToAbout() {
-      this.$router.push('/about')
+      this.$router.push('/about');
+    },
+    getRandomAvatar() {
+      const randomIndex = Math.floor(Math.random() * this.avatars.length);
+      this.currentAvatar = this.avatars[randomIndex];
     }
+  },
+  mounted() {
+    this.getRandomAvatar();
   }
 };
+
 </script>
 
 <style scoped>
 .main-content {
   display: flex;
   justify-content: center;
-  align-items: center; 
-  height: 70vh; 
-  text-align: center; 
+  align-items: center;
+  text-align: center;
 }
 
 .header {
-  max-width: 538px; 
-  width: 100%; 
-  padding: 0 20px; 
-  color: #fff;
+  padding: 0 2vh;
+  color: #fff; 
 }
 
 .title {
-  font: 800 44px 'Inconsolata', serif;
-  color: black;
+  font: 800 2.75em 'Inconsolata', serif;
+  color: var(--text-color); 
 }
 
 .intro-text {
   color: #9c9c9c;
-  letter-spacing: 0.14px;
-  margin-top: 20px;
-  font: 400 21px 'Inconsolata', serif;
+  font: 400 1.3em 'Inconsolata', serif;
 }
 
 .cta-button {
   border-radius: 4px;
-  background-color: #246A73;
-  margin-top: 30px;
-  font-size: 16px;
+  background-color: #246A73; 
+  margin-top: 3vh;
+  font-size: 1rem;
   font-weight: 700;
   padding: 21px 60px;
-  transition: background-color 0.3s, box-shadow 0.3s; 
+  transition: background-color 0.3s, box-shadow 0.3s;
   position: relative;
-  border: none; 
-  color: #fff;
+  border: none;
+  color: #fff; 
   font-family: 'Inconsolata', serif;
-  box-shadow: 8px 8px 8px rgba(36, 106, 115, 0.3); 
+  box-shadow: 60px -16px rgba(36, 106, 115, 0.3);
 }
 
 .cta-button:hover {
-  background-color: #1c5262;
-  box-shadow: 0 6px 12px rgba(28, 82, 98, 0.3); 
+  background-color: #1c5262; 
+  box-shadow: 0 6px 12px rgba(28, 82, 98, 0.3);
 }
 
 .arrow {
-  display: none; 
-  position: absolute; 
-  margin-left: 10px; 
+  display: none;
+  position: absolute;
+  margin-left: 10px;
   top: 50%;
-  transform: translateY(-50%) translateX(-10px); 
+  transform: translateY(-50%) translateX(-10px);
   opacity: 0;
-  transition: transform 0.5s, opacity 0.5s; 
+  transition: transform 0.5s, opacity 0.5s;
 }
 
 .cta-button:hover .arrow {
-  display: inline-block; 
+  display: inline-block;
   opacity: 1;
-  transform: translateY(-50%) translateX(0); 
+  transform: translateY(-50%) translateX(0);
 }
 
 .avatar {
-  border-radius: 50%; 
-  width: 250px; 
-  height: 250px; 
-  margin-bottom: 20px; 
+  border-radius: 50%;
+  width: 320px;
+  height: 320px;
 }
 
 .typing-effect {
   width: 0;
-  overflow: hidden; 
-  white-space: nowrap; 
+  overflow: hidden;
+  white-space: nowrap;
   animation: typing 2.5s forwards;
 }
 
@@ -134,7 +148,12 @@ export default {
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
+
 </style>

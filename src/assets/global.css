@@ -1,11 +1,63 @@
+:root {
+  --background-color-light: #F8FAFB;
+  --text-color-light: #000000;
+
+  --background-color-dark: #121212;
+  --text-color-dark: #ffffff;
+
+  --theme-color :#246A73;
+  --transition-duration: 0.3s;
+}
+
+* {
+  cursor: url('./Cursor.svg'), auto;
+}
+
 body {
-    font-family: 'Inconsolata', sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    cursor: url('./Cursor.svg'), auto;
-    background-color: #F8FAFB;
-  }
-  
-  a, button, img {
-    cursor: url('./Pointer.svg'), pointer;
-  }
+  font-family: 'Inconsolata', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+  transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
+}
+
+a, button, img {
+  cursor: url('./Pointer.svg'), pointer;
+}
+
+[data-theme='dark'] {
+  --background-color: var(--background-color-dark);
+  --text-color: var(--text-color-dark);
+
+  --header-bg-color: var(--header-bg-color-dark);
+  --header-text-color: var(--header-text-color-dark);
+  --nav-item-text-color: var(--nav-item-text-color-dark);
+}
+
+[data-theme='light'] {
+  --background-color: var(--background-color-light);
+  --text-color: var(--text-color-light);
+
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+  transition: color var(--transition-duration) ease;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  transition: color var(--transition-duration) ease;
+}
+
+img {
+  transition: filter var(--transition-duration) ease;
+}

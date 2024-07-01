@@ -1,0 +1,51 @@
+<template>
+    <div class="theme-switch" @click="toggleTheme">
+        <img :src="currentTheme === 'light' ? lightIcon : darkIcon" :alt="currentTheme" class="theme-icon" />
+    </div>
+</template>
+
+<script>
+import lightIcon from '@/assets/light_mode_icon.png';
+import darkIcon from '@/assets/dark_mode_icon.png';
+
+export default {
+    data() {
+        return {
+            currentTheme: localStorage.getItem('theme') || 'light',
+        };
+    },
+    computed: {
+        lightIcon() {
+            return lightIcon;
+        },
+        darkIcon() {
+            return darkIcon;
+        },
+    },
+    methods: {
+        toggleTheme() {
+            this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', this.currentTheme);
+            localStorage.setItem('theme', this.currentTheme);
+        },
+    },
+    mounted() {
+        document.documentElement.setAttribute('data-theme', this.currentTheme);
+    },
+};
+</script>
+
+<style scoped>
+.theme-switch {
+    position: absolute;
+    top: 2vh;
+    right: 1vw;
+    z-index: 9999;
+}
+
+.theme-icon {
+    width: 32px;
+    height: 32px;
+    transition: opacity 0.5s ease-in-out;
+}
+</style>
