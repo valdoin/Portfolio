@@ -1,6 +1,6 @@
 <template>
     <div class="theme-switch" @click="toggleTheme">
-        <img :src="currentTheme === 'light' ? lightIcon : darkIcon" :alt="currentTheme" class="theme-icon" />
+        <img :src="currentTheme === 'dark' ? darkIcon : lightIcon" :alt="currentTheme" class="theme-icon" />
     </div>
 </template>
 
