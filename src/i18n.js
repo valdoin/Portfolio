@@ -30,7 +30,8 @@ const messages = {
     fileBucketDescription : "FileBucket is a simple file server web app that you can deploy locally on your computer.",
     projectsTeaser : "And many more on my ",
     contactTitle : "You've reached the end !",
-    contactLinksText : "If you appreciate my work or wish to contact me, feel free to check out the following links :"
+    contactLinksText : "If you appreciate my work or wish to contact me, feel free to check out the following links :",
+    blogDescription : "My music/dev blog"
   },
   fr: {
     navbarHome : "accueil",
@@ -61,7 +62,8 @@ const messages = {
     fileBucketDescription : "FileBucket est une application web qui fait office de serveur de fichiers, facilement déployable localement sur votre ordinateur.",
     projectsTeaser : "Et bien d'autres sur mon ",
     contactTitle : "Vous voilà arrivé au bout !",
-    contactLinksText : "Si vous appréciez mon travail ou que vous voulez me contacter, n'hésitez pas à consulter les liens suivants :"
+    contactLinksText : "Si vous appréciez mon travail ou que vous voulez me contacter, n'hésitez pas à consulter les liens suivants :",
+    blogDescription : "Mon blog de musique/dev"
   }
 };
 

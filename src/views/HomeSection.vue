@@ -26,7 +26,6 @@ export default {
     return {
       avatars: [randomAvatar1, randomAvatar2, randomAvatar3, randomAvatar4, randomAvatar5, randomAvatar6],
       currentAvatar: '',
-      isDarkMode: true
     };
   },
   methods: {

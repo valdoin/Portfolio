@@ -15,6 +15,10 @@
         <img class="icon" src="@/assets/green_discord_icon.png" alt="Discord" />
         <p class="description">valdoin</p>
       </div>
+      <div class="icon-container slide-in-bottom" @click="navigateTo('https://valdoin-blog.olivierandriko.com/')">
+        <img class="icon" src="@/assets/logo_small.png" alt="Blog" />
+        <p class="description">{{ $t('blogDescription') }}</p>
+      </div>
     </div>
     <footer>
       <p>{{ $t('footer') }}</p>
@@ -40,11 +44,8 @@ export default {
 }
 
 h2 {
-  margin-top: 7vh;
-}
-
-h2 {
   font-size: 1.25em;
+  margin-top: 7vh;
 }
 
 h1,
@@ -104,6 +105,11 @@ h2 {
 
   h1 {
     font-size: 1.65em;
+  }
+  h2 {
+    font-size : 1em;
+    margin-right: 8%;
+    margin-left: 8%
   }
   .icons {
     flex-direction: column;

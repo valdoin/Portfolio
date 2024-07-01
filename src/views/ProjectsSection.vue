@@ -33,7 +33,7 @@
       :description="$t('fileBucketDescription')"
     />
   </div>
-  <p class="teaser-text">{{$t('projectsTeaser')}} <a class="github-link" href="https://github.com/valdoin">GitHub</a> ...</p>
+  <p class="teaser-text">{{$t('projectsTeaser')}} <a class="github-link" href="https://github.com/valdoin" target="_blank">GitHub</a> ...</p>
 </template>
 
 
@@ -85,7 +85,7 @@ export default {
   margin-top: 2.5vh;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1270px) {
   .projects {
     flex-direction: column;
     align-items: center;

@@ -11,7 +11,7 @@ import darkIcon from '@/assets/dark_mode_icon.png';
 export default {
     data() {
         return {
-            currentTheme: localStorage.getItem('theme') || 'light',
+            currentTheme: localStorage.getItem('theme') || 'dark',
         };
     },
     computed: {
