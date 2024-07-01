@@ -2,28 +2,26 @@
   <main class="main-content">
     <header class="header">
       <img class="avatar fade-in" src="@/assets/avatar.jpg" alt="Avatar d'Olivier ANDRIKO">
-      <h1 class="typing-effect title">Olivier ANDRIKO</h1>
+      <h1 class="typing-effect title">olivier andriko</h1>
       <p class="intro-text typing-effect">
-        Welcome to my portfolio !
+        welcome to my portfolio !
       </p>
-      <section class="cta-section slide-in-left" tabindex="0" role="button" @click="redirectToAbout">
-        <p class="cta-text">Let’s get started<span class="arrow">➔</span></p>
-      </section>
+      <button class="cta-button slide-in-left" @click="redirectToAbout">
+        let’s get started<span class="arrow">➔</span>
+      </button>
     </header>
   </main>
 </template>
 
 <script>
-export default ({
+export default {
   name: 'HomeSection',
   methods: {
     redirectToAbout() {
-      this.$emit('cta-clicked');
-      this.$router.push('/about');
-    }
-  }
-});
+      this.$router.push('/about')
+    }}};
 </script>
+
 
 <style scoped>
 .main-content {
@@ -53,7 +51,7 @@ export default ({
   font: 400 21px 'Roboto Slab', serif;
 }
 
-.cta-section {
+.cta-button {
   border-radius: 4px;
   background-color: #246A73;
   margin-top: 30px;
@@ -62,17 +60,15 @@ export default ({
   padding: 21px 60px;
   transition: background-color 0.3s; 
   position: relative;
-  cursor: pointer;
+  border: none; 
+  color: #fff;
+  font-family: 'Roboto Slab', serif;
 }
 
-.cta-section:hover {
+.cta-button:hover {
   background-color: #1c5262;
 }
 
-.cta-text {
-  font-family: 'Roboto Slab', serif;
-  position: relative;
-}
 
 .arrow {
   display: none; 
@@ -82,7 +78,7 @@ export default ({
   transform: translateY(-50%);
 }
 
-.cta-section:hover .arrow {
+.cta-button:hover .arrow {
   display: inline-block; 
   animation: fade-in 2.5s 2s forwards; 
 }

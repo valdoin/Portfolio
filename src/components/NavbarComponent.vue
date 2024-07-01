@@ -4,12 +4,11 @@
       <img src="@/assets/logo.png" alt="Logo du site" class="site-logo">
     </router-link>
     <nav class="navigation">
-      <router-link to="/" class="nav-item" tabindex="0" :class="{ 'active': $route.path === '/' }" @click="updateActiveLink($event, '/')">Home</router-link>
-      <router-link to="/about" class="nav-item" tabindex="0" :class="{ 'active': $route.path === '/about' }" @click="updateActiveLink($event, '/about')">About me</router-link>
-      <router-link to="/skills" class="nav-item" tabindex="0" :class="{ 'active': $route.path === '/skills' }" @click="updateActiveLink($event, '/skills')">Skills</router-link>
-      <router-link to="/projects" class="nav-item" tabindex="0" :class="{ 'active': $route.path === '/projects' }" @click="updateActiveLink($event, '/projects')">Projects</router-link>
-      <router-link to="/contact" class="nav-button" tabindex="0" @click="hideActiveBar">Contact</router-link>
-      <div class="active-bar" :style="{ width: activeWidth, left: activeLeft }"></div>
+      <router-link to="/" class="nav-item" tabindex="0" :class="{ 'active': isActive('/') }" @click="updateActiveLink('/')">home</router-link>
+      <router-link to="/about" class="nav-item" tabindex="0" :class="{ 'active': isActive('/about') }" @click="updateActiveLink('/about')">about me</router-link>
+      <router-link to="/skills" class="nav-item" tabindex="0" :class="{ 'active': isActive('/skills') }" @click="updateActiveLink('/skills')">skills</router-link>
+      <router-link to="/projects" class="nav-item" tabindex="0" :class="{ 'active': isActive('/projects') }" @click="updateActiveLink('/projects')">projects</router-link>
+      <router-link to="/contact" class="nav-item" tabindex="0" :class="{ 'active': isActive('/contact') }" @click="updateActiveLink('/contact')">contact</router-link>
     </nav>
   </header>
 </template>
@@ -17,36 +16,12 @@
 <script>
 export default {
   name: 'NavbarComponent',
-  data() {
-    return {
-      activeWidth: '0px',
-      activeLeft: '0px'
-    };
-  },
-  mounted() {
-    this.updateActiveBar();
-  },
   methods: {
-    updateActiveLink(event, path) {
-      const targetLink = event.target;
-      this.activeWidth = `${targetLink.offsetWidth}px`;
-      this.activeLeft = `${targetLink.offsetLeft}px`;
-      if (path) {
-        this.$router.push(path);
-      }
+    updateActiveLink(path) {
+      this.$router.push(path);
     },
-    hideActiveBar() {
-      this.activeWidth = '0px';
-      this.activeLeft = '0px';
-    },
-    updateActiveBar() {
-      const activeLink = this.$el.querySelector('.nav-item.active');
-      if (activeLink) {
-        this.activeWidth = `${activeLink.offsetWidth}px`;
-        this.activeLeft = `${activeLink.offsetLeft}px`;
-      } else {
-        this.hideActiveBar();
-      }
+    isActive(route) {
+      return this.$route.path === route;
     }
   }
 };
@@ -71,12 +46,8 @@ export default {
     flex-wrap: wrap;
     padding: 10px 20px;
   }
-  .active-bar {
-    bottom: 16px; 
-    height: 4px; 
-  }
 }
-
+  
 .logo-link {
   text-decoration: none;
 }
@@ -101,28 +72,23 @@ export default {
   align-self: stretch;
   margin: auto 0;
   text-decoration: none;
-  color: inherit;
+  color: black;
   position: relative; 
 }
 
-.nav-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-  background-color: #246A73;
-  color: #fff;
-  padding: 14px 24px;
-  font: 16px 'Roboto Slab', serif;
-  text-decoration: none;
+.nav-item:hover {
+  color: #246A73; 
 }
 
-.active-bar {
-  position: absolute;
-  bottom: 20px; 
-  height: 6px;
+.active {
+  color: white;
   background-color: #246A73;
-  transition: width 0.3s, left 0.3s; 
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.active:hover {
+  color:white
 }
 </style>
