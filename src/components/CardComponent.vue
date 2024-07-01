@@ -57,7 +57,7 @@ export default {
 
 <style scoped>
 .card {
-  width: calc(25% - 30px);
+  width: calc(22% - 30px);
   border-radius: 10px;
   box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.3);
   overflow: hidden;
@@ -99,7 +99,8 @@ export default {
 }
 
 .project-image {
-  width: 100%;
+  max-width: 150px;
+  max-height: 150px;
   object-fit: cover;
   border-radius: 10px;
 }

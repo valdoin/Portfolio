@@ -4,16 +4,17 @@
       <img class="avatar fade-in" src="@/assets/avatar.jpg" alt="Avatar d'Olivier ANDRIKO">
       <h1 class="typing-effect title">olivier andriko</h1>
       <p class="intro-text typing-effect">
-        welcome to my portfolio !
+        {{ $t('welcomeMessage') }}
       </p>
       <button class="cta-button slide-in-left" @click="redirectToAbout">
-        let’s get started<span class="arrow">➔</span>
+        {{ $t('getStarted') }}<span class="arrow">➔</span>
       </button>
     </header>
   </main>
 </template>
 
 <script>
+
 export default {
   name: 'HomeSection',
   methods: {
@@ -41,7 +42,7 @@ export default {
 }
 
 .title {
-  font: 800 44px 'Roboto Slab', serif;
+  font: 800 44px 'Inconsolata', serif;
   color: black;
 }
 
@@ -49,7 +50,7 @@ export default {
   color: #9c9c9c;
   letter-spacing: 0.14px;
   margin-top: 20px;
-  font: 400 21px 'Roboto Slab', serif;
+  font: 400 21px 'Inconsolata', serif;
 }
 
 .cta-button {
@@ -63,7 +64,7 @@ export default {
   position: relative;
   border: none; 
   color: #fff;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Inconsolata', serif;
   box-shadow: 8px 8px 8px rgba(36, 106, 115, 0.3); 
 }
 

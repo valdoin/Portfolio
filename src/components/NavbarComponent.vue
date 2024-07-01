@@ -4,18 +4,26 @@
       <img src="@/assets/logo.png" alt="Logo du site" class="site-logo">
     </router-link>
     <nav class="navigation">
-      <router-link to="/" class="nav-item" tabindex="0" :class="{ 'active': isActive('/') }" @click="updateActiveLink('/')">home</router-link>
-      <router-link to="/about" class="nav-item" tabindex="0" :class="{ 'active': isActive('/about') }" @click="updateActiveLink('/about')">about me</router-link>
-      <router-link to="/skills" class="nav-item" tabindex="0" :class="{ 'active': isActive('/skills') }" @click="updateActiveLink('/skills')">skills</router-link>
-      <router-link to="/projects" class="nav-item" tabindex="0" :class="{ 'active': isActive('/projects') }" @click="updateActiveLink('/projects')">projects</router-link>
-      <router-link to="/contact" class="nav-item" tabindex="0" :class="{ 'active': isActive('/contact') }" @click="updateActiveLink('/contact')">contact</router-link>
+      <router-link to="/" class="nav-item" tabindex="0" :class="{ 'active': isActive('/') }" @click="updateActiveLink('/')">{{ $t('navbarHome') }}</router-link>
+      <router-link to="/about" class="nav-item" tabindex="0" :class="{ 'active': isActive('/about') }" @click="updateActiveLink('/about')">{{ $t('navbarAbout') }}</router-link>
+      <router-link to="/skills" class="nav-item" tabindex="0" :class="{ 'active': isActive('/skills') }" @click="updateActiveLink('/skills')">{{ $t('navbarSkills') }}</router-link>
+      <router-link to="/projects" class="nav-item" tabindex="0" :class="{ 'active': isActive('/projects') }" @click="updateActiveLink('/projects')">{{ $t('navbarProjects') }}</router-link>
+      <router-link to="/contact" class="nav-item" tabindex="0" :class="{ 'active': isActive('/contact') }" @click="updateActiveLink('/contact')">{{ $t('navbarContact') }}</router-link>
     </nav>
   </header>
 </template>
 
 <script>
+import { useI18n } from 'vue-i18n';
 export default {
   name: 'NavbarComponent',
+  setup() {
+    const { t } = useI18n();
+
+    return {
+      $t: t
+    };
+  },
   methods: {
     updateActiveLink(path) {
       this.$router.push(path);
@@ -68,7 +76,7 @@ export default {
 }
 
 .nav-item {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Inconsolata', serif;
   align-self: stretch;
   margin: auto 0;
   text-decoration: none;

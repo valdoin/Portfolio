@@ -1,19 +1,19 @@
 <template>
   <div class="projects">
     <CardComponent title="PicPals" :imageSrc="picpalsIcon" :icons="picpalsStackIcons"
-      githubLink="https://github.com/valdoin/PicPals" cardColor=black
+      githubLink="https://github.com/valdoin/PicPals" cardColor="black"
       description="PicPals is a social media platform that allows users to share drawings and connect with friends." />
     <CardComponent title="Planifica" :imageSrc="planificaIcon" :icons="planificaStackIcons"
-      githubLink="https://github.com/valdoin/Planifica-Front" cardColor=#00BF63
+      githubLink="https://github.com/valdoin/Planifica-Front" cardColor="#00BF63"
       description="Planifica is a scheduling web app with an inuitive colorful interface and rich features." />
     <CardComponent title="Portfolio" :imageSrc="portfolioIcon" :icons="portfolioStackIcons"
-      githubLink="https://github.com/valdoin/Portfolio" cardColor=#246A73
+      githubLink="https://github.com/valdoin/Portfolio" cardColor="#246A73"
       description="This website is my portfolio. It was made to improve my skills in front-end development." />
     <CardComponent title="FileBucket" :imageSrc="fileBucketIcon" :icons="fileBucketStackIcons"
-      githubLink="https://github.com/valdoin/FileBucket" cardColor=#F38F13
+      githubLink="https://github.com/valdoin/FileBucket" cardColor="#F38F13"
       description="FileBucket is a simple file server web app that you can deploy locally on your computer." />
   </div>
-  <p class="teaser-text">Many more to come ...</p>
+  <p class="teaser-text">And many more on my <a class="github-link" href="https://github.com/valdoin">GitHub profile</a> ...</p>
 </template>
 
 <script>
@@ -29,8 +29,6 @@ import picpalsIcon from '../assets/IC.png';
 import planificaIcon from '../assets/IC2.png';
 import fileBucketIcon from '../assets/IC3.png';
 import portfolioIcon from '../assets/logo.png';
-
-
 
 export default {
   name: 'ProjectsSection',
@@ -59,15 +57,42 @@ export default {
 
 <style scoped>
 .projects {
-  margin-top: 7vh
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap:3vh; 
+  margin-top: 7vh;
 }
 
 .teaser-text {
   text-align: center;
-  font: 300 17px 'Roboto Slab', serif;
+  font: 300 20px 'Inconsolata', serif;
   margin-top: 8vh;
   font-style: italic;
   animation: fadeIn 2s ease forwards;
+}
+
+.github-link {
+  position: relative;
+  text-decoration: none;
+  color: #246A73;
+}
+
+.github-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #246A73;
+  transition: width 0.4s ease, right 0.4s ease;
+}
+
+.github-link:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 @keyframes fadeIn {

@@ -1,11 +1,11 @@
 <template>
   <div class="skills">
     <div class="folders">
-      <FolderComponent title="programming languages" :items="programmingLanguages" class="fade-in" />
-      <FolderComponent title="web & frameworks" :items="webTechnologies" class="fade-in" />
-      <FolderComponent title="database" :items="databases" class="fade-in" />
-      <FolderComponent title="mobile development" :items="mobileDevelopment" class="fade-in" />
-      <FolderComponent title="others" :items="others" class="fade-in" />
+      <FolderComponent :title="$t('firstFolder')" :items="programmingLanguages" class="fade-in" />
+      <FolderComponent :title="$t('secondFolder')" :items="webTechnologies" class="fade-in" />
+      <FolderComponent :title="$t('thirdFolder')" :items="databases" class="fade-in" />
+      <FolderComponent :title="$t('fourthFolder')" :items="mobileDevelopment" class="fade-in" />
+      <FolderComponent :title="$t('fifthFolder')" :items="others" class="fade-in" />
     </div>
   </div>
 </template>
@@ -23,6 +23,8 @@ import mongodbIcon from '../assets/mongodb_icon.svg';
 import gitIcon from '../assets/git_icon.svg';
 import dockerIcon from '../assets/docker_icon.svg';
 import linuxIcon from '../assets/linux_icon.svg';
+import windowsIcon from '../assets/windows_icon.png';
+import osxIcon from '../assets/osx_icon.png';
 import phpIcon from '../assets/php_icon.svg';
 import angularIcon from '../assets/angular_icon.svg';
 import vuejsIcon from '../assets/vuejs_icon.svg';
@@ -69,7 +71,9 @@ export default {
       others: [
         { name: 'Git', icon: gitIcon },
         { name: 'Docker', icon: dockerIcon },
+        { name: 'Windows', icon: windowsIcon },
         { name: 'Linux', icon: linuxIcon },
+        { name: 'MacOS', icon: osxIcon },
         { name: 'Ansible', icon: ansibleIcon },
       ]
     };

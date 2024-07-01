@@ -1,24 +1,27 @@
 <template>
-  <head>
+    <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
   </head>
   <div id="app">
+    <LanguageSwitchComponent />
     <NavbarComponent />
     <router-view />
+    <footer>
+      <p>{{ $t('footer') }}</p>
+    </footer>
   </div>
-  <footer class="footer">
-    <p>&copy; 2024 ANDRIKO Olivier. All rights reserved.</p>
-  </footer>
 </template>
 
 <script>
 import NavbarComponent from './components/NavbarComponent.vue';
+import LanguageSwitchComponent from './components/LanguageSwitchComponent.vue';
 
 export default {
   components: {
-    NavbarComponent
+    NavbarComponent,
+    LanguageSwitchComponent
   },
   name: 'App',
   mounted() {
@@ -55,19 +58,19 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #app {
   position: relative;
   overflow: hidden;
 }
 
-.footer {
+footer {
   position: fixed;
   bottom: 0;
   width: 100%;
   color: black;
   padding: 10px;
   text-align: center;
-  font: 400 14px 'Roboto Slab', serif;
+  font: 400 14px 'Inconsolata', sans-serif;
 }
 </style>
