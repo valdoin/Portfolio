@@ -1,8 +1,9 @@
 <template>
   <div class="folder" @click="toggleOpen">
     <div class="folder-header">
-      <img src="@/assets/folder_icon.png" alt="Folder Icon" class="folder-icon" />
-      <span>{{ title }}</span>
+      <img :src="isOpen ? openFolderIcon : closedFolderIcon" :key="isOpen ? 'open' : 'closed'" alt="Folder Icon"
+        class="folder-icon" />
+      <span class="folder-title">{{ title }}</span>
     </div>
     <transition name="fade">
       <div v-if="isOpen" class="folder-content">
@@ -16,6 +17,9 @@
 </template>
 
 <script>
+import openFolderIcon from '@/assets/open_folder_icon.png';
+import closedFolderIcon from '@/assets/closed_folder_icon.png';
+
 export default {
   name: 'FolderComponent',
   props: {
@@ -30,7 +34,9 @@ export default {
   },
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      openFolderIcon: openFolderIcon,
+      closedFolderIcon: closedFolderIcon
     };
   },
   methods: {
@@ -41,7 +47,17 @@ export default {
       return {
         animationDelay: `${index * 0.1}s`
       };
+    },
+    preloadIcons() {
+      const icons = [this.openFolderIcon, this.closedFolderIcon];
+      icons.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
     }
+  },
+  mounted() {
+    this.preloadIcons();
   }
 };
 </script>
@@ -52,8 +68,6 @@ export default {
   border-radius: 5px;
   margin: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
-  cursor: url('../assets/Pointer.svg'), pointer;
 }
 
 .folder-header {
@@ -68,6 +82,7 @@ export default {
   margin-right: 10px;
 }
 
+
 .folder-content {
   padding: 5px;
 }
@@ -77,24 +92,26 @@ export default {
   text-align: center;
   margin: 10px 0;
   position: relative;
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: fadeIn 0.5s forwards;
 }
 
 .item-icon {
   width: 50px;
   height: 50px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.item-icon:hover {
+  transform: scale(1.05);
 }
 
 .item-name {
   display: none;
   position: absolute;
   white-space: nowrap;
-  left: 17vh;
+  left: 18vh;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #246A73;
   color: #fff;
   padding: 3px 5px;
   border-radius: 3px;
@@ -112,11 +129,13 @@ export default {
   }
 }
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s, transform 0.5s;
 }
 
-.fade-enter-from, .fade-leave-to {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
   transform: translateY(-20px);
 }

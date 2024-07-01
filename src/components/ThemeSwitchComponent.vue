@@ -23,14 +23,22 @@ export default {
         },
     },
     methods: {
+        preloadImages() {
+            const images = [lightIcon, darkIcon];
+            images.forEach((src) => {
+                const img = new Image();
+                img.src = src;
+            });
+        },
         toggleTheme() {
-            this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+            this.currentTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', this.currentTheme);
             localStorage.setItem('theme', this.currentTheme);
         },
     },
     mounted() {
         document.documentElement.setAttribute('data-theme', this.currentTheme);
+        this.preloadImages();
     },
 };
 </script>

@@ -22,7 +22,7 @@
     </div>
     <footer>
       <p>{{ $t('footer') }}</p>
-      <p>{{ $t('netlify') }}<a href="https://www.netlify.com/">Netlify</a>.</p>
+      <p>{{ $t('netlify') }}<a href="https://www.netlify.com/" target="_blank">Netlify</a>.</p>
     </footer>
   </div>
 </template>

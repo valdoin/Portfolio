@@ -29,6 +29,7 @@ export default {
 </script>
 
 <style scoped>
+
 .header-container {
   display: flex;
   justify-content: space-evenly;
@@ -39,34 +40,6 @@ export default {
   padding: 2vh 2.5vw;
   background-color: var(--header-bg-color-light); 
   color: var(--header-text-color-light); 
-}
-
-@media (max-width: 991px) {
-  .header-container {
-    flex-direction: column; 
-    align-items: center; 
-    padding: 10px 20px;
-  }
-
-  .site-logo{
-    display: none;
-  }
-
-  .navigation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    gap: 10px;
-    width: 100%;
-    padding-bottom: 5%;
-  }
-
-  .nav-item {
-    flex: 1 1 auto; 
-    padding: 10px 15px;
-    text-align: center;
-    font-size: 0.75em;
-  }
 }
 
 .logo-link {
@@ -115,5 +88,42 @@ export default {
 .active:hover {
   color: white;
   transform: scale(1.1); 
+}
+
+@media (max-width: 991px) {
+  .header-container {
+    flex-direction: column; 
+    align-items: center; 
+    padding: 10px 20px;
+  }
+
+  .site-logo{
+    display: none;
+  }
+
+  .navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 10px;
+    width: 100%;
+    padding-bottom: 5%;
+  }
+
+  .nav-item {
+    flex: 1 1 auto; 
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 0.75em;
+  }
+
+  .nav-item:hover{
+    color:white;
+    transform: none;
+  }
+
+  .active:hover{
+    transform: none;
+  }
 }
 </style>
