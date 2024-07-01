@@ -1,12 +1,22 @@
 <template>
+  <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    </head>
   <div id="app">
+    <NavbarComponent/>
     <router-view />
   </div>
 </template>
 
 <script>
+import NavbarComponent from './components/NavbarComponent.vue';
 export default {
   name: 'App',
+  components: {
+    NavbarComponent
+  },
   mounted() {
     window.addEventListener('keydown', this.handleKeydown);
   },
