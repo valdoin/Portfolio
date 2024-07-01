@@ -17,27 +17,6 @@ export default {
   components: {
     NavbarComponent
   },
-  mounted() {
-    window.addEventListener('keydown', this.handleKeydown);
-  },
-  beforeUnmount() {
-    window.removeEventListener('keydown', this.handleKeydown);
-  },
-  methods: {
-    handleKeydown(event) {
-      if (event.key === ' ') {
-        event.preventDefault();
-        this.navigateNext();
-      }
-    },
-    navigateNext() {
-      const routes = ['/', '/about', '/skills', '/projects', '/contact'];
-      const currentRoute = this.$route.path;
-      const currentIndex = routes.indexOf(currentRoute);
-      const nextIndex = (currentIndex + 1) % routes.length;
-      this.$router.push(routes[nextIndex]);
-    }
-  }
 };
 </script>
 
