@@ -28,7 +28,7 @@ export default {
   name: 'ContactSection',
   methods: {
     navigateTo(url) {
-      window.location.href = url;
+      window.open(url, '_blank');
     }
   }
 };
