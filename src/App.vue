@@ -68,5 +68,6 @@ export default {
   color: black;
   padding: 10px;
   text-align: center;
+  font: 400 14px 'Roboto Slab', serif;
 }
 </style>

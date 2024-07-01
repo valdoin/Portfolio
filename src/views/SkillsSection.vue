@@ -1,28 +1,11 @@
 <template>
   <div class="skills">
     <div class="folders">
-      <FolderComponent 
-        title="programming languages" 
-        :items="programmingLanguages"
-      />
-      <FolderComponent 
-        title="web & frameworks" 
-        :items="webTechnologies"
-      />
-      <FolderComponent 
-        title="database" 
-        :items="databases"
-      />
-
-      <FolderComponent 
-        title="mobile development" 
-        :items="mobileDevelopment"
-      />
-
-      <FolderComponent 
-        title="others" 
-        :items="others"
-      />
+      <FolderComponent title="programming languages" :items="programmingLanguages" class="fade-in" />
+      <FolderComponent title="web & frameworks" :items="webTechnologies" class="fade-in" />
+      <FolderComponent title="database" :items="databases" class="fade-in" />
+      <FolderComponent title="mobile development" :items="mobileDevelopment" class="fade-in" />
+      <FolderComponent title="others" :items="others" class="fade-in" />
     </div>
   </div>
 </template>
@@ -101,6 +84,20 @@ export default {
 
 .folders {
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease forwards;
 }
 </style>

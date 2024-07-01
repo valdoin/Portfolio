@@ -31,7 +31,7 @@ export default {
 .header-container {
   display: flex;
   justify-content: center;
-  background-color: #fff;
+  background-color: #F8FAFB;
   gap: 20px;
   font-size: 20px;
   color: #000;

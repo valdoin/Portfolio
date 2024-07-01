@@ -3,6 +3,7 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     cursor: url('./Cursor.svg'), auto;
+    background-color: #F8FAFB;
   }
   
   a, button, img {
