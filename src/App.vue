@@ -4,8 +4,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
   </head>
-  <div id="app">
-    <LanguageSwitchComponent/>
+  <div id="app" ref="app">
+    <LanguageSwitchComponent />
     <ThemeSwitchComponent />
     <NavbarComponent />
     <router-view />
@@ -58,7 +58,8 @@ export default {
       this.$router.push(routes[previousIndex]);
     },
     addSwipeListeners() {
-      this.hammer = new Hammer(this.$el);
+      const appElement = this.$refs.app;
+      this.hammer = new Hammer(appElement);
       this.hammer.on('swipeleft', this.navigateNext);
       this.hammer.on('swiperight', this.navigatePrevious);
     },
@@ -66,6 +67,7 @@ export default {
       if (this.hammer) {
         this.hammer.off('swipeleft', this.navigateNext);
         this.hammer.off('swiperight', this.navigatePrevious);
+        this.hammer.destroy();
         this.hammer = null;
       }
     }

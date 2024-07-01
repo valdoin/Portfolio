@@ -8,9 +8,31 @@
     <p class="slide-in-left">{{ $t('aboutFifthParagraph') }}</p>
     <p class="slide-in-right" v-html="$t('aboutSixthParagraph')"></p>
     <div class="band fade-in"></div>
-    <p class="tip fade-in">{{ $t('aboutQuickTip') }}</p>
+    <p class="tip fade-in">{{ isMobile ? $t('aboutQuickTipMobile') : $t('aboutQuickTip') }}</p>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isMobile: false,
+    };
+  },
+  mounted() {
+    this.checkScreenSize();
+    window.addEventListener('resize', this.checkScreenSize);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkScreenSize);
+  },
+  methods: {
+    checkScreenSize() {
+      this.isMobile = window.innerWidth <= 768; 
+    },
+  },
+};
+</script>
 
 <style scoped>
 .about {
@@ -137,6 +159,7 @@ p:nth-of-type(6) {
 
   .band {
     width: 97%;
+    margin-top: 0.5vh;
   }
 }
 
@@ -153,6 +176,7 @@ p:nth-of-type(6) {
 
   .band {
     width: 97%;
+    margin-top: 0.5vh;
   }
 }
 
@@ -169,6 +193,7 @@ p:nth-of-type(6) {
 
   .band {
     width: 97%;
+    margin-top: 0.5vh;
   }
 }
 </style>

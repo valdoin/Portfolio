@@ -48,8 +48,8 @@ export default {
     padding: 10px 20px;
   }
 
-  .logo-link {
-    margin-bottom: 10px;
+  .site-logo{
+    display: none;
   }
 
   .navigation {

@@ -48,4 +48,11 @@ export default {
     height: 32px;
     transition: opacity 0.5s ease-in-out;
 }
+
+@media (max-width: 991px) {
+    .theme-switch{   
+        top: 0;
+        right: 1vw;
+    }
+}
 </style>

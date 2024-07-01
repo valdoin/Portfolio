@@ -93,4 +93,11 @@ export default {
   transform: translateY(100%);
   opacity: 0;
 }
+
+@media (max-width: 991px) {
+  .language-switch {
+    height: 7vh;
+    bottom: 2vh;
+  }
+}
 </style>
