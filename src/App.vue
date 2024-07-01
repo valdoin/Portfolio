@@ -8,6 +8,9 @@
     <NavbarComponent />
     <router-view />
   </div>
+  <footer class="footer">
+    <p>&copy; 2024 ANDRIKO Olivier. All rights reserved.</p>
+  </footer>
 </template>
 
 <script>
@@ -56,5 +59,14 @@ export default {
 #app {
   position: relative;
   overflow: hidden;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  padding: 10px;
+  text-align: center;
 }
 </style>

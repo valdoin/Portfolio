@@ -6,7 +6,7 @@
         :items="programmingLanguages"
       />
       <FolderComponent 
-        title="web" 
+        title="web & frameworks" 
         :items="webTechnologies"
       />
       <FolderComponent 

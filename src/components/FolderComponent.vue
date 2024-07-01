@@ -51,6 +51,7 @@
     margin: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
+    cursor: url('../assets/Pointer.svg'), pointer;
   }
   
   .folder-header {
@@ -80,8 +81,8 @@
   }
   
   .item-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
   }
   
   .item-name {
