@@ -5,6 +5,6 @@ body {
     cursor: url('./Cursor.svg'), auto;
   }
   
-  a, button {
+  a, button, img {
     cursor: url('./Pointer.svg'), pointer;
   }

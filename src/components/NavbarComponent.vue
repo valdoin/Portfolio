@@ -85,7 +85,7 @@ export default {
   background-color: #246A73;
   border-radius: 8px;
   padding: 10px 20px;
-  transition: background-color 0.5s, color 0.5s;
+  transition: background-color 0.5s, 
 }
 
 .active:hover {

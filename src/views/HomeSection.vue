@@ -19,9 +19,10 @@ export default {
   methods: {
     redirectToAbout() {
       this.$router.push('/about')
-    }}};
+    }
+  }
+};
 </script>
-
 
 <style scoped>
 .main-content {
@@ -41,7 +42,7 @@ export default {
 
 .title {
   font: 800 44px 'Roboto Slab', serif;
-  color:black;
+  color: black;
 }
 
 .intro-text {
@@ -58,29 +59,33 @@ export default {
   font-size: 16px;
   font-weight: 700;
   padding: 21px 60px;
-  transition: background-color 0.3s; 
+  transition: background-color 0.3s, box-shadow 0.3s; 
   position: relative;
   border: none; 
   color: #fff;
   font-family: 'Roboto Slab', serif;
+  box-shadow: 8px 8px 8px rgba(36, 106, 115, 0.3); 
 }
 
 .cta-button:hover {
   background-color: #1c5262;
+  box-shadow: 0 6px 12px rgba(28, 82, 98, 0.3); 
 }
-
 
 .arrow {
   display: none; 
   position: absolute; 
-  margin-left: 1.75vh; 
+  margin-left: 10px; 
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(-10px); 
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s; 
 }
 
 .cta-button:hover .arrow {
   display: inline-block; 
-  animation: fade-in 2.5s 2s forwards; 
+  opacity: 1;
+  transform: translateY(-50%) translateX(0); 
 }
 
 .avatar {
