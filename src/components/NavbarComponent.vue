@@ -118,7 +118,6 @@ export default {
   }
 
   .nav-item:hover{
-    color:white;
     transform: none;
   }
 

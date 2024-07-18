@@ -4,6 +4,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
   </head>
+  <div id="cursor-coordinates" ref="cursorCoordinates" :style="{ display: coordinatesVisible ? 'block' : 'none' }">
+    x: {{ x }}<br>y: {{ y }}
+  </div>
   <div id="app" ref="app">
     <LanguageSwitchComponent />
     <ThemeSwitchComponent />
@@ -11,6 +14,7 @@
     <router-view />
   </div>
 </template>
+
 
 <script>
 import Hammer from 'hammerjs';
@@ -25,12 +29,23 @@ export default {
     ThemeSwitchComponent
   },
   name: 'App',
+  data() {
+    return {
+      x: 0,
+      y: 0,
+      coordinatesVisible: false,
+      isMobile: false  
+    };
+  },
   mounted() {
     window.addEventListener('keydown', this.handleKeydown);
+    window.addEventListener('mousemove', this.updateCoordinates);
     this.addSwipeListeners();
+    this.checkIfMobile();
   },
   beforeUnmount() {
     window.removeEventListener('keydown', this.handleKeydown);
+    window.removeEventListener('mousemove', this.updateCoordinates);
     this.removeSwipeListeners();
   },
   methods: {
@@ -70,6 +85,34 @@ export default {
         this.hammer.destroy();
         this.hammer = null;
       }
+    },
+    updateCoordinates(event) {
+      this.x = event.clientX;
+      this.y = event.clientY;
+      this.coordinatesVisible = true;
+      if (!this.isMobile) {
+        const cursorCoordinatesElement = this.$refs.cursorCoordinates;
+        const offsetX = 20; 
+        const offsetY = 20; 
+        let adjustedX = event.clientX + offsetX;
+        let adjustedY = event.clientY + offsetY;
+
+        const cursorRect = cursorCoordinatesElement.getBoundingClientRect();
+
+        if (adjustedX + cursorRect.width > window.innerWidth) {
+          adjustedX = window.innerWidth - cursorRect.width;
+        }
+        if (adjustedY + cursorRect.height > window.innerHeight) {
+          adjustedY = window.innerHeight - cursorRect.height;
+        }
+
+        cursorCoordinatesElement.style.left = `${adjustedX}px`;
+        cursorCoordinatesElement.style.top = `${adjustedY}px`;
+      }
+    },
+    checkIfMobile() {
+      const isMobile = window.innerWidth <= 768; 
+      this.isMobile = isMobile;
     }
   }
 };
@@ -79,5 +122,24 @@ export default {
 #app {
   position: relative;
   overflow: hidden;
+}
+
+#cursor-coordinates {
+  color: white;
+  position: absolute;
+  font-size: 10px;
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 5px;
+  border-radius: 5px;
+  pointer-events: none; 
+  z-index: 9999; 
+  display: none;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  #cursor-coordinates {
+    display: none;
+  }
 }
 </style>
