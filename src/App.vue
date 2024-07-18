@@ -87,10 +87,10 @@ export default {
       }
     },
     updateCoordinates(event) {
-      this.x = event.clientX;
-      this.y = event.clientY;
-      this.coordinatesVisible = true;
       if (!this.isMobile) {
+        this.x = event.clientX;
+        this.y = event.clientY;
+        this.coordinatesVisible = true;
         const cursorCoordinatesElement = this.$refs.cursorCoordinates;
         const offsetX = 20; 
         const offsetY = 20; 
