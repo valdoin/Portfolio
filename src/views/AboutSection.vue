@@ -4,8 +4,11 @@
     <h1 class="slide-in-left" v-html="$t('aboutFirstParagraph')"></h1>
     <p class="slide-in-right">{{ $t('aboutSecondParagraph') }}</p>
     <p class="slide-in-left">{{ $t('aboutThirdParagraph') }}</p>
-    <p class="slide-in-right">{{ $t('aboutFourthParagraph') }}</p>
-    <p class="slide-in-left">{{ $t('aboutFifthParagraph') }}</p>
+    <p class="slide-in-left">
+      <i18n-t keypath="aboutFourthParagraph">
+        <a href="https://valdoin-blog.olivierandriko.com" target="_blank" class="i18n-link">blog</a>
+      </i18n-t>
+    </p>
     <p class="slide-in-right" v-html="$t('aboutSixthParagraph')"></p>
     <div class="band fade-in"></div>
     <p class="tip fade-in">{{ isMobile ? $t('aboutQuickTipMobile') : $t('aboutQuickTip') }}</p>
@@ -55,6 +58,7 @@ p {
   opacity: 0;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  line-height: 1.7;
 }
 
 .band {
@@ -73,6 +77,29 @@ p {
   text-align: center;
   opacity: 0;
   animation: fadeIn 1s forwards;
+}
+
+.i18n-link {
+  position: relative;
+  text-decoration: none;
+  color: #246A73;
+}
+
+.i18n-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  display: block;
+  margin-top: 0.1px;
+  right: 0;
+  background: #246A73;
+  transition: width 0.4s ease, right 0.4s ease;
+}
+
+.i18n-link:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 @keyframes slideInLeft {
@@ -150,7 +177,7 @@ p:nth-of-type(6) {
   h1, p {
     margin: 0 10%;
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   .tip {
@@ -158,7 +185,7 @@ p:nth-of-type(6) {
   }
 
   .band {
-    width: 97%;
+    width: 82%;
     margin-top: 0.5vh;
   }
 }
@@ -167,7 +194,7 @@ p:nth-of-type(6) {
   h1, p {
     margin: 0 5%;
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
 
   .tip {
@@ -175,16 +202,17 @@ p:nth-of-type(6) {
   }
 
   .band {
-    width: 97%;
+    width: 90%;
     margin-top: 0.5vh;
   }
 }
 
 @media (max-width: 576px) {
   h1, p {
-    margin: 0 2%;
-    font-size: 14px;
-    margin-bottom: 10px;
+    margin: 0 5%;
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 1.5;
   }
 
   .tip {
@@ -192,7 +220,7 @@ p:nth-of-type(6) {
   }
 
   .band {
-    width: 97%;
+    width: 93%;
     margin-top: 0.5vh;
   }
 }
