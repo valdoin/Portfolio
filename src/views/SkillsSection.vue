@@ -5,7 +5,8 @@
       <FolderComponent :title="$t('secondFolder')" :items="webTechnologies" class="fade-in" />
       <FolderComponent :title="$t('thirdFolder')" :items="databases" class="fade-in" />
       <FolderComponent :title="$t('fourthFolder')" :items="mobileDevelopment" class="fade-in" />
-      <FolderComponent :title="$t('fifthFolder')" :items="others" class="fade-in" />
+      <FolderComponent :title="$t('fifthFolder')" :items="pentesting" class="fade-in" />
+      <FolderComponent :title="$t('sixthFolder')" :items="others" class="fade-in" />
     </div>
   </div>
 </template>
@@ -35,6 +36,11 @@ import neo4jIcon from '../assets/neo4j_icon.png';
 import androidStudioIcon from '../assets/androidstudio_icon.svg';
 import flutterIcon from '../assets/flutter_icon.png';
 import ansibleIcon from '../assets/ansible_icon.svg';
+import csharpIcon from '../assets/csharp_icon.png';
+import kaliIcon from '../assets/kali_icon.png';
+import burpsuiteIcon from '../assets/burpsuite_icon.png';
+import metasploitIcon from '../assets/metasploit_icon.png';
+import wiresharkIcon from '../assets/wireshark_icon.png';
 
 export default {
   name: 'SkillsSection',
@@ -47,6 +53,7 @@ export default {
         { name: 'C', icon: cIcon },
         { name: 'Python', icon: pythonIcon },
         { name: 'Java', icon: javaIcon },
+        { name: 'C#', icon: csharpIcon },
       ],
       webTechnologies: [
         { name: 'HTML', icon: htmlIcon },
@@ -67,6 +74,12 @@ export default {
       mobileDevelopment: [
         { name: 'Android Studio', icon: androidStudioIcon },
         { name: 'Flutter', icon: flutterIcon },
+      ],
+      pentesting : [
+        { name: 'Kali Linux', icon: kaliIcon },
+        { name: 'Burp Suite', icon: burpsuiteIcon },
+        { name: 'Metasploit', icon: metasploitIcon },
+        { name: 'Wireshark', icon: wiresharkIcon },
       ],
       others: [
         { name: 'Git', icon: gitIcon },

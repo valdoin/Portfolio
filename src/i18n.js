@@ -21,7 +21,7 @@ const messages = {
     aboutFifthParagraph:
       "I'm also an avid traveler, having explored the majority of Europe's capitals and ventured through the United States and Russia. Additionally, I've had the enriching experience of participating in two linguistic exchanges in London and Milan, enhancing my fluency in English and Italian.",
     aboutSixthParagraph:
-      "Looking ahead, my aspiration is to bridge my passion for technology with my love for music, creating innovative projects that harmonize both realms. Join me on this journey as I strive to blend creativity and curiosity into each of my projects. 🚀",
+      "Feel free to reach out if you're interested in my profile or have a project in mind ! 🚀",
     aboutQuickTip:
       "Quick tip : you can navigate through the website using the left and right arrows on your keyboard !",
     aboutQuickTipMobile:
@@ -30,11 +30,12 @@ const messages = {
     secondFolder: "web & frameworks",
     thirdFolder: "database",
     fourthFolder: "mobile development",
-    fifthFolder: "others",
+    fifthFolder: "pentesting",
+    sixthFolder: "others",
     picpalsDescription:
       "PicPals is a social media platform that allows users to share drawings and connect with friends.",
-    planificaDescription:
-      "Planifica is a scheduling web app with an inuitive colorful interface and rich features.",
+    vaultyDescription:
+      "Encrypted desktop password manager featuring a companion browser extension for seamless credential autofill.",
     portfolioDescription:
       "This website is my portfolio. It was made to improve my skills in front-end development.",
     fileBucketDescription:
@@ -56,7 +57,7 @@ const messages = {
     welcomeMessage: "Bienvenue sur mon portfolio !",
     getStarted: "C'est parti !",
     aboutFirstParagraph:
-      "Je m'appelle <strong>Olivier ANDRIKO</strong> et je te souhaite la bienvenue.👋",
+      "Je m'appelle <strong>Olivier ANDRIKO</strong> et je vous souhaite la bienvenue.👋",
     aboutSecondParagraph:
       "Je suis un développeur full-stack web/mobile passionné, actuellement en études à Lyon, avec un intérêt croissant pour la cybersécurité et le pentesting.",
     aboutThirdParagraph:
@@ -66,7 +67,7 @@ const messages = {
     aboutFifthParagraph:
       "Je suis un grand voyageur, ayant visité la plupart des capitales européennes, les Etats-Unis ou encore la Russie. J'ai notamment effectué deux échanges linguistiques à Londres et à Milan qui m'ont permis de consolider mon niveau d'anglais et d'italien.",
     aboutSixthParagraph:
-      "Idéalement, j'aimerais travailler sur des projets qui allient ma passion pour l'informatique avec mon amour pour la musique. N'hésite pas à me contacter si tu as une idée de projet ! 🚀",
+      "N'hésitez pas à me contacter si mon profil vous intéresse ou que vous avez une idée de projet ! 🚀",
     aboutQuickTip:
       "Petit conseil : tu peux naviguer sur le site en utilisant les flèches directionnelles de ton clavier !",
     aboutQuickTipMobile:
@@ -75,11 +76,12 @@ const messages = {
     secondFolder: "développement web",
     thirdFolder: "bases de données",
     fourthFolder: "développement mobile",
-    fifthFolder: "divers",
+    fifthFolder: "pentesting",
+    sixthFolder: "divers",
     picpalsDescription:
       "PicPals est un prototype de réseau social qui permet aux utilisateurs de partager quotidiennement des dessins.",
-    planificaDescription:
-      "Planifica est une application web de planification dotée d'une interface intuitive et colorée ainsi que de fonctionnalités riches.",
+    vaultyDescription:
+      "Un gestionnaire de mots de passe de bureau chiffré avec une extension de navigateur pour un remplissage automatique des identifiants.",
     portfolioDescription:
       "Ce site est mon portfolio. Il m'a permis d'améliorer mes compétences en développement front-end.",
     fileBucketDescription:

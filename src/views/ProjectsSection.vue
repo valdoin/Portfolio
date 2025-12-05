@@ -9,12 +9,12 @@
       :description="$t('picpalsDescription')"
     />
     <CardComponent
-      title="Planifica"
-      :imageSrc="planificaIcon"
-      :icons="planificaStackIcons"
-      githubLink="https://github.com/valdoin/Planifica-Front"
-      cardColor="#00BF63"
-      :description="$t('planificaDescription')"
+      title="Vaulty"
+      :imageSrc="vaultyIcon"
+      :icons="vaultyStackIcons"
+      githubLink="https://github.com/valdoin/Vaulty"
+      cardColor="#c1c0e6"
+      :description="$t('vaultyDescription')"
     />
     <CardComponent
       title="Portfolio"
@@ -46,10 +46,11 @@ import mongodbIcon from '../assets/mongodb_icon.svg';
 import pythonIcon from '../assets/python_icon.svg';
 import javascriptIcon from '../assets/javascript_icon.png';
 import flaskIcon from '../assets/flask_icon.svg';
+import csharpIcon from '../assets/csharp_icon.png';
 import picpalsIcon from '../assets/IC.png';
-import planificaIcon from '../assets/IC2.png';
 import fileBucketIcon from '../assets/IC3.png';
 import portfolioIcon from '../assets/logo.png';
+import vaultyIcon from '../assets/vaulty.png';
 
 export default {
   name: 'ProjectsSection',
@@ -59,11 +60,11 @@ export default {
   data() {
     return {
       picpalsStackIcons: [flutterIcon, nodejsIcon, mongodbIcon],
-      planificaStackIcons: [vuejsIcon, nodejsIcon, mongodbIcon],
+      vaultyStackIcons: [csharpIcon, javascriptIcon],
       portfolioStackIcons: [vuejsIcon],
       fileBucketStackIcons: [pythonIcon, flaskIcon, javascriptIcon],
       picpalsIcon: picpalsIcon,
-      planificaIcon: planificaIcon,
+      vaultyIcon: vaultyIcon,
       portfolioIcon: portfolioIcon,
       fileBucketIcon: fileBucketIcon
     };
