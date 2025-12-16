@@ -132,6 +132,8 @@ export default {
 #app {
   position: relative;
   overflow: hidden;
+  touch-action: pan-y; 
+  min-height: 100vh; 
 }
 
 #cursor-coordinates {
