@@ -3,12 +3,27 @@
     <router-link to="/" class="logo-link">
       <img src="@/assets/logo.png" alt="Logo du site" class="site-logo">
     </router-link>
+
     <nav class="navigation">
-      <router-link to="/" class="nav-item" tabindex="0" :class="{ 'active': isActive('/') }" @click="updateActiveLink('/')">{{ $t('navbarHome') }}</router-link>
-      <router-link to="/about" class="nav-item" tabindex="0" :class="{ 'active': isActive('/about') }" @click="updateActiveLink('/about')">{{ $t('navbarAbout') }}</router-link>
-      <router-link to="/skills" class="nav-item" tabindex="0" :class="{ 'active': isActive('/skills') }" @click="updateActiveLink('/skills')">{{ $t('navbarSkills') }}</router-link>
-      <router-link to="/projects" class="nav-item" tabindex="0" :class="{ 'active': isActive('/projects') }" @click="updateActiveLink('/projects')">{{ $t('navbarProjects') }}</router-link>
-      <router-link to="/contact" class="nav-item" tabindex="0" :class="{ 'active': isActive('/contact') }" @click="updateActiveLink('/contact')">{{ $t('navbarContact') }}</router-link>
+      <router-link to="/" class="nav-item" tabindex="0">
+        {{ $t('navbarHome') }}
+      </router-link>
+
+      <router-link to="/about" class="nav-item" tabindex="0">
+        {{ $t('navbarAbout') }}
+      </router-link>
+
+      <router-link to="/skills" class="nav-item" tabindex="0">
+        {{ $t('navbarSkills') }}
+      </router-link>
+
+      <router-link to="/projects" class="nav-item" tabindex="0">
+        {{ $t('navbarProjects') }}
+      </router-link>
+
+      <router-link to="/contact" class="nav-item" tabindex="0">
+        {{ $t('navbarContact') }}
+      </router-link>
     </nav>
     <theme-switch></theme-switch>
   </header>
@@ -17,28 +32,20 @@
 <script>
 export default {
   name: 'NavbarComponent',
-  methods: {
-    updateActiveLink(path) {
-      this.$router.push(path);
-    },
-    isActive(route) {
-      return this.$route.path === route;
-    }
-  }
 };
 </script>
 
 <style scoped>
 .header-container {
   display: flex;
-  justify-content: space-evenly; 
+  justify-content: space-evenly;
   align-items: center;
   font-size: 20px;
   font-weight: 500;
   line-height: 150%;
   padding: 2vh 2.5vw;
-  background-color: var(--header-bg-color-light); 
-  color: var(--header-text-color-light); 
+  background-color: var(--header-bg-color-light);
+  color: var(--header-text-color-light);
 }
 
 .logo-link {
@@ -65,28 +72,28 @@ export default {
 }
 
 .nav-item {
-  font-family: 'Inconsolata', monospace; 
+  font-family: 'Inconsolata', monospace;
   text-decoration: none;
-  color: var(--nav-item-text-color-light); 
+  color: var(--nav-item-text-color-light);
   padding: 10px 15px;
   border-radius: 8px;
-  transition: all 0.3s; 
+  transition: all 0.3s;
 }
 
 .nav-item:hover {
-  color: #246A73; 
+  color: #246A73;
   background-color: rgba(36, 106, 115, 0.1);
 }
 
-.active {
-  color: white; 
+.nav-item.active {
+  color: white;
   background-color: #246A73;
 }
 
 @media (max-width: 991px) {
   .header-container {
-    flex-direction: column; 
-    padding: 10px 5px; 
+    flex-direction: column;
+    padding: 10px 5px;
     gap: 10px;
   }
 
@@ -96,21 +103,27 @@ export default {
 
   .navigation {
     width: 100%;
-    justify-content: space-between; 
-    gap: 0; 
+    justify-content: space-between;
+    gap: 0;
   }
 
   .nav-item {
-    font-size: 13px; 
-    padding: 8px 4px; 
-    font-weight: 400; 
+    font-size: 16px;
+    padding: 8px 2px;
+    font-weight: 600;
+  }
+
+  .nav-item.active {
+    background-color: transparent;
+    color: #246A73;
+    text-decoration: underline;
+    text-underline-offset: 4px;
   }
 }
 
 @media (max-width: 370px) {
   .nav-item {
-    font-size: 11px; 
-    padding: 6px 2px;
+    font-size: 14px;
   }
 }
 </style>
