@@ -41,11 +41,17 @@ export default {
 <style scoped>
 .contact {
   text-align: center;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 57vh; 
+  width: 100%;
 }
 
 h2 {
   font-size: 1.25em;
-  margin-top: 7vh;
+  margin-top: 2vh; 
 }
 
 h1,
@@ -102,24 +108,22 @@ h2 {
 }
 
 @media (max-width: 600px) {
-
   h1 {
     font-size: 1.65em;
   }
   h2 {
     font-size : 1em;
     margin-right: 8%;
-    margin-left: 8%
+    margin-left: 8%;
+    line-height: 1.5em;
   }
   .icons {
     flex-direction: column;
   }
-
   .icon {
     width: 100px;
     height: 100px;
   }
-
   .description {
     font-size: 1em;
   }
@@ -164,12 +168,14 @@ footer {
   color: var(--text-color);
   text-align: center;
   font: 400 16px 'Inconsolata', sans-serif;
+  padding-bottom: 10px; 
 }
 
 @media (max-width: 768px) {
   footer {
     position: relative;
     margin-top: 5vh;
+    padding-bottom: 0; 
   }
 }
 
@@ -179,7 +185,6 @@ a {
   color: #246A73;
   font: 600 16px 'Inconsolata', serif;
 }
-
 
 a::after {
   content: '';

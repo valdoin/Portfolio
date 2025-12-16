@@ -13,7 +13,7 @@ const messages = {
     getStarted: "Let’s get started !",
     aboutFirstParagraph: "My name is <strong>Olivier ANDRIKO</strong>. 👋",
     aboutSecondParagraph:
-      "I'm a passionate full-stack web/mobile developer currently studying in Lyon, France, with a growing interest on cybersecurity and pentesting.",
+      "I'm a passionate full-stack developer currently studying in Lyon, France, with a growing interest on cybersecurity and pentesting.",
     aboutThirdParagraph:
       "For me, computer science isn't just an academic pursuit—it's an integral part of my daily life. Beyond the classroom, I'm constantly engaged in personal projects and reading up on a bunch of different topics, like tech stuff, laws, and ethics, especially since the advent of AI.",
     aboutFourthParagraph:
@@ -59,7 +59,7 @@ const messages = {
     aboutFirstParagraph:
       "Je m'appelle <strong>Olivier ANDRIKO</strong> et je vous souhaite la bienvenue.👋",
     aboutSecondParagraph:
-      "Je suis un développeur full-stack web/mobile passionné, actuellement en études à Lyon, avec un intérêt croissant pour la cybersécurité et le pentesting.",
+      "Je suis un développeur logiciel full-stack passionné, actuellement en études à Lyon, avec un intérêt croissant pour la cybersécurité et le pentesting.",
     aboutThirdParagraph:
       "L'informatique n'est pas qu'un enseignement académique pour moi, elle fait partie de mon quotidien. Je réalise des projets en autonomie dans mon temps libre et lis de nombreux ouvrages dans le domaine, qu'ils soient techniques ou juridiques/éthiques.",
     aboutFourthParagraph:

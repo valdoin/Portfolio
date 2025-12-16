@@ -29,10 +29,9 @@ export default {
 </script>
 
 <style scoped>
-
 .header-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-evenly; 
   align-items: center;
   font-size: 20px;
   font-weight: 500;
@@ -66,63 +65,52 @@ export default {
 }
 
 .nav-item {
-  font-family: 'Inconsolata', serif;
+  font-family: 'Inconsolata', monospace; 
   text-decoration: none;
   color: var(--nav-item-text-color-light); 
   padding: 10px 15px;
   border-radius: 8px;
-  transition: transform 0.3s, color 0.3s; 
+  transition: all 0.3s; 
 }
 
 .nav-item:hover {
   color: #246A73; 
-  transform: scale(1.1);
+  background-color: rgba(36, 106, 115, 0.1);
 }
 
 .active {
   color: white; 
   background-color: #246A73;
-  transition: background-color 0.5s, transform 0.3s; 
-}
-
-.active:hover {
-  color: white;
-  transform: scale(1.1); 
 }
 
 @media (max-width: 991px) {
   .header-container {
     flex-direction: column; 
-    align-items: center; 
-    padding: 10px 20px;
+    padding: 10px 5px; 
+    gap: 10px;
   }
 
-  .site-logo{
+  .site-logo {
     display: none;
   }
 
   .navigation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    gap: 10px;
     width: 100%;
-    padding-bottom: 5%;
+    justify-content: space-between; 
+    gap: 0; 
   }
 
   .nav-item {
-    flex: 1 1 auto; 
-    padding: 10px 15px;
-    text-align: center;
-    font-size: 0.75em;
+    font-size: 13px; 
+    padding: 8px 4px; 
+    font-weight: 400; 
   }
+}
 
-  .nav-item:hover{
-    transform: none;
-  }
-
-  .active:hover{
-    transform: none;
+@media (max-width: 370px) {
+  .nav-item {
+    font-size: 11px; 
+    padding: 6px 2px;
   }
 }
 </style>

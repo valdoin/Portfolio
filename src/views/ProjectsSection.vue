@@ -82,7 +82,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; 
-  gap:3vh; 
+  gap: 3vh; 
   margin-top: 2.5vh;
 }
 
@@ -97,7 +97,7 @@ export default {
 .teaser-text {
   text-align: center;
   font: 300 20px 'Inconsolata', serif;
-  margin-top: 8vh;
+  margin-top: 8vh; 
   font-style: italic;
   animation: fadeIn 2s ease forwards;
 }
@@ -131,12 +131,18 @@ a {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-  to {
-    opacity: 1;
+@media (max-width: 768px) {
+  .teaser-text {
+    margin-top: 3vh; 
+    font-size: 16px; 
+  }
+  
+  .teaser-text a {
+    font-size: 16px;
   }
 }
 </style>
