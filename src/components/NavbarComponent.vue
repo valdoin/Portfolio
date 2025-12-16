@@ -130,16 +130,28 @@ export default {
     font-size: 16px;
     padding: 8px 2px;
     font-weight: 600;
+    transition: color 0.3s, transform 0.3s; 
+  }
+
+  .nav-item:hover,
+  .nav-item:focus,
+  .nav-item:active {
+    background-color: transparent !important;
+    color: var(--nav-item-text-color-light); 
   }
 
   .nav-item.active {
-    background-color: transparent;
-    color: #246A73;
+    background-color: transparent !important; 
+    color: #246A73 !important;
     text-decoration: underline;
     text-underline-offset: 4px;
   }
-
   
+  .nav-item.active:hover,
+  .nav-item.active:focus {
+    background-color: transparent !important;
+    color: #246A73 !important;
+  }
 }
 
 @media (max-width: 370px) {
