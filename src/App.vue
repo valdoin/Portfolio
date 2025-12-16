@@ -1,4 +1,5 @@
 <template>
+
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +35,7 @@ export default {
       x: 0,
       y: 0,
       coordinatesVisible: false,
-      isMobile: false  
+      isMobile: false
     };
   },
   mounted() {
@@ -59,13 +60,22 @@ export default {
       }
     },
     navigateNext() {
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+
       const routes = ['/', '/about', '/skills', '/projects', '/contact'];
       const currentRoute = this.$route.path;
       const currentIndex = routes.indexOf(currentRoute);
       const nextIndex = (currentIndex + 1) % routes.length;
       this.$router.push(routes[nextIndex]);
     },
+
     navigatePrevious() {
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+
       const routes = ['/', '/about', '/skills', '/projects', '/contact'];
       const currentRoute = this.$route.path;
       const currentIndex = routes.indexOf(currentRoute);
@@ -92,8 +102,8 @@ export default {
         this.y = event.clientY;
         this.coordinatesVisible = true;
         const cursorCoordinatesElement = this.$refs.cursorCoordinates;
-        const offsetX = 20; 
-        const offsetY = 20; 
+        const offsetX = 20;
+        const offsetY = 20;
         let adjustedX = event.clientX + offsetX;
         let adjustedY = event.clientY + offsetY;
 
@@ -111,7 +121,7 @@ export default {
       }
     },
     checkIfMobile() {
-      const isMobile = window.innerWidth <= 768; 
+      const isMobile = window.innerWidth <= 768;
       this.isMobile = isMobile;
     }
   }
@@ -128,11 +138,11 @@ export default {
   color: white;
   position: absolute;
   font-size: 10px;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 5px;
   border-radius: 5px;
-  pointer-events: none; 
-  z-index: 9999; 
+  pointer-events: none;
+  z-index: 9999;
   display: none;
   overflow: hidden;
 }

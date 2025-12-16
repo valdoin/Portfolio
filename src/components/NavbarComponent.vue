@@ -10,7 +10,7 @@
       </router-link>
 
       <router-link to="/about" class="nav-item" tabindex="0">
-        {{ $t('navbarAbout') }}
+        {{ isMobile ? $t('navbarAboutMobile') : $t('navbarAbout') }}
       </router-link>
 
       <router-link to="/skills" class="nav-item" tabindex="0">
@@ -22,7 +22,7 @@
       </router-link>
 
       <router-link to="/contact" class="nav-item" tabindex="0">
-        {{ $t('navbarContact') }}
+        {{ isMobile ? $t('navbarContactMobile') : $t('navbarContact') }}
       </router-link>
     </nav>
     <theme-switch></theme-switch>
@@ -32,6 +32,23 @@
 <script>
 export default {
   name: 'NavbarComponent',
+  data() {
+    return {
+      isMobile: false,
+    };
+  },
+  mounted() {
+    this.checkScreenSize();
+    window.addEventListener('resize', this.checkScreenSize);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkScreenSize);
+  },
+  methods: {
+    checkScreenSize() {
+      this.isMobile = window.innerWidth <= 991;
+    },
+  },
 };
 </script>
 
@@ -82,7 +99,7 @@ export default {
 
 @media (hover: hover) {
   .nav-item:hover {
-    color: #246A73; 
+    color: #246A73;
     background-color: rgba(36, 106, 115, 0.1);
   }
 }
