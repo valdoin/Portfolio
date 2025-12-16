@@ -80,9 +80,11 @@ export default {
   transition: all 0.3s;
 }
 
-.nav-item:hover {
-  color: #246A73;
-  background-color: rgba(36, 106, 115, 0.1);
+@media (hover: hover) {
+  .nav-item:hover {
+    color: #246A73; 
+    background-color: rgba(36, 106, 115, 0.1);
+  }
 }
 
 .nav-item.active {
